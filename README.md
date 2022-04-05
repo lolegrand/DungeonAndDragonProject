@@ -18,8 +18,8 @@ npm run build
 npm run build --report
 ```
 
-##Project management
-####/ (main page : setup)
+## Project management
+#### / (main page : setup)
 
 > Corresponds to the configuration page
 > Contains "selects" to choose :
@@ -31,7 +31,7 @@ npm run build --report
 >
 > When the chosen configuration is validated by the user, the router redirects to '/Search
 
-####/Recherche (search)
+#### /Recherche (search)
 
 > All spells corresponding to the user's configuration are displayed by default.
 >
@@ -43,7 +43,7 @@ npm run build --report
 >
 > To close the description, the user must click on the spell name again.
 
-####/Statistiques (statistics)
+#### /Statistiques (statistics)
 
 > To access the statistics, a button is included on all views
 >
