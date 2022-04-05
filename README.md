@@ -75,6 +75,7 @@ new Array(
 {
   "Livre":"MJ",
   "Nom":"Abri",
+  "Ecole":"Evocation",
   "Branches": ["Force"],
   "Classes": [
     {
