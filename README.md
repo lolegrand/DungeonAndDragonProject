@@ -18,6 +18,37 @@ npm run build
 npm run build --report
 ```
 
+##Project management
+####/ (main page : setup)
+
+> Corresponds to the configuration page
+> Contains "selects" to choose :
+>- The school
+>- The branch
+>- The class
+>- The level
+>- The book
+>
+> When the chosen configuration is validated by the user, the router redirects to '/Search
+
+####/Recherche (search)
+
+> All spells corresponding to the user's configuration are displayed by default.
+>
+> Contains a search bar where the user can enter the name of a spell.
+>
+> This search bar, with autocomplete, will narrow down the number of matching spells based on the desired name
+>
+> When the user clicks on the name of one of the spells, the description of its characteristics is displayed below
+>
+> To close the description, the user must click on the spell name again.
+
+####/Statistiques (statistics)
+
+> To access the statistics, a button is included on all views
+>
+> Displays the number of spells and books referenced.
+
 ## Data structure
 
 ```javascript
@@ -42,7 +73,7 @@ new Array(
 
 ```json
 {
-  "Libre":"MJ",
+  "Livre":"MJ",
   "Nom":"Abri",
   "Branches": ["Force"],
   "Classes": [
@@ -62,7 +93,7 @@ new Array(
   "Durée": "2 heures/niveau (T)",
   "Jet de sauvegarde": "Aucun",
   "Résistance à la magie": "Non",
-  "Description": "<le texte trés long>",
+  "Description": "<le texte très long>",
   "Nécessaire": "Composante matérielle : une petite perle de cristal qui éclate quand le sort s'achève ou quand le personnage y met un terme."
 }
 ```
