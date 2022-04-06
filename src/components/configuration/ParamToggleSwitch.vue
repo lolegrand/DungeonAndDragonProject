@@ -7,8 +7,7 @@
 
 <script>
 export default {
-  name: 'ParamToggleSwitch',
-  props: ['picked']
+  name: 'ParamToggleSwitch'
 }
 </script>
 
