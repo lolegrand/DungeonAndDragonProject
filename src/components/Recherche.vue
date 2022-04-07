@@ -2,21 +2,28 @@
   <div id="Recherche">
     <p>Recherche</p>
     <input type="text" v-model="search" placeholder="Spell name">
-    <ul id="SpellsList">
-      <li v-for="data in filteredSpells" :key="data.id">{{ data }}</li>
+    <ul>
+      <li v-for="spell in filteredSpells" :key="spell">
+        <desc-spell-show :spell-name="spell" :spells-info="spellsInfo(spell)" />
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 import {SpellName} from '../assets/functions.js'
+import {SpellFullDesc} from '../assets/SpellFullDesc.js'
+import DescSpellShow from './recherche/DescSpellShow'
 
 export default {
   name: 'Recherche',
+  components: {DescSpellShow},
   data () {
     return {
       spellsList: SpellName(),
-      search: ''
+      spellsInfo: SpellFullDesc,
+      search: '',
+      show: false
     }
   },
   computed: {
