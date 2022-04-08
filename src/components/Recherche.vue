@@ -3,16 +3,15 @@
     <p>Recherche</p>
     <input type="text" v-model="search" placeholder="Spell name">
     <ul>
-      <li v-for="spell in filteredSpells" :key="spell">
-        <desc-spell-show :spell-name="spell" :spells-info="spellsInfo(spell)" />
+      <li v-for="spell in filteredSpells" :key="spell.id">
+        <desc-spell-show :spell-name=spell[1] :spells-info="spell" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import {SpellName} from '../assets/functions.js'
-import {SpellFullDesc} from '../assets/SpellFullDesc.js'
+import {sortTable} from '../assets/data.min'
 import DescSpellShow from './recherche/DescSpellShow'
 
 export default {
@@ -20,16 +19,14 @@ export default {
   components: {DescSpellShow},
   data () {
     return {
-      spellsList: SpellName(),
-      spellsInfo: SpellFullDesc,
-      search: '',
-      show: false
+      spellsInfo: sortTable,
+      search: ''
     }
   },
   computed: {
     filteredSpells () {
-      return this.spellsList.filter((spell) => {
-        return spell.toLowerCase().match(this.search.toLowerCase())
+      return this.spellsInfo.filter((spell) => {
+        return spell[1].toLowerCase().match(this.search.toLowerCase())
       })
     }
   }
