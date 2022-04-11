@@ -1,10 +1,10 @@
 <template>
   <table>
-    <select-row list-name="Search Ecoles:" :data-list=schoolList />
-    <select-row list-name="Search Branches:" :data-list=branchesList />
-    <select-row list-name="Search Classes & Domaines:" :data-list=classList />
-    <select-row list-name="Search by niveau:" :data-list=spellLevelList />
-    <pendulum   list-name="Search by Livre:" />
+    <select-row list-name="Search Ecoles:" :data-list=schoolList storage-id="ecoles"/>
+    <select-row list-name="Search Branches:" :data-list=branchesList storage-id="branches"/>
+    <select-row list-name="Search Classes & Domaines:" :data-list=classList storage-id="classesAndDomains"/>
+    <select-row list-name="Search by niveau:" :data-list=spellLevelList storage-id="level"/>
+    <pendulum   list-name="Search by Livre:" storage-id="book"/>
     <tr>
       <td style="text-align: center" colspan="3">
         <router-link to="/recherche">Recherche</router-link>

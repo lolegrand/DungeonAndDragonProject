@@ -1,6 +1,6 @@
 <template>
   <td>
-    <input type="checkbox" @change="$emit('row-state-changed', $event.target.checked)" id="checkbox"/>
+    <input type="checkbox" @change="$emit('row-state-changed', $event.target.checked)" :checked="defaultChecked"/>
     Prendre en compte ?
   </td>
 </template>
@@ -12,7 +12,8 @@
  * see subject for more details.
  */
 export default {
-  name: 'ParamToggleSwitch'
+  name: 'ParamToggleSwitch',
+  props: ['defaultChecked']
 }
 </script>
 

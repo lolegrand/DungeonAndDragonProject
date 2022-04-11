@@ -4,11 +4,11 @@
       <p>{{listName}}</p>
     </td>
     <td>
-      <multi-data-select :disable="!isActive" name="Supprimer ->" :data-list=leftList v-on:data-changed=fromLeftList />
+      <multi-data-select :disable="!isActive" name="Supprimer ->" :data-list=selected v-on:data-changed=fromLeftList />
       <multi-data-select :disable="!isActive" name="<- Ajouter"  :data-list=rightList v-on:data-changed=fromRightList />
     </td>
     <td>
-      <param-toggle-switch v-on:row-state-changed="isActive = $event"/>
+      <param-toggle-switch v-on:row-state-changed="isActive = $event" :default-checked=isActive />
     </td>
   </tr>
 </template>
@@ -17,6 +17,7 @@
 import MultiDataSelect from './MultiDataSelect'
 import ParamToggleSwitch from './ParamToggleSwitch'
 import {SpellBookTitle} from '../../assets/functions'
+import StorageMixin from './StorageMixin'
 
 /**
  * This component represents a data pendulum in which a list of data can be placed on the a 'left array' or in a
@@ -25,8 +26,6 @@ import {SpellBookTitle} from '../../assets/functions'
  * The columns are represented by the component 'multi-data-select'.
  * The property listName: is representing the name displayed to the user.
  * The data:
- *  - isActive, define if this component is active or not. Following the state of the component 'param-toggle-switch'.
- *  - leftList, represent the data on the left side of the pendulum.
  *  - rightList, represent the data on the right side of the pendulum.
  * Note:
  * Because of the way data are managed in VueJs i had to fetch my data inside the component.
@@ -34,12 +33,11 @@ import {SpellBookTitle} from '../../assets/functions'
 export default {
   name: 'Pendulum',
   components: {ParamToggleSwitch, MultiDataSelect},
-  props: ['listName'],
+  props: ['listName', 'storageId'],
+  mixins: [StorageMixin],
   data () {
     return {
-      isActive: false,
-      leftList: SpellBookTitle(),
-      rightList: []
+      rightList: SpellBookTitle()
     }
   },
   methods: {
@@ -50,7 +48,7 @@ export default {
      */
     fromRightList (event) {
       this.rightList = this.rightList.filter(value => !event.includes(value))
-      this.leftList = [...this.leftList, ...event].sort()
+      this.selected = [...this.selected, ...event].sort()
     },
 
     /**
@@ -59,8 +57,15 @@ export default {
      * side of the pendulum and added to the right side.
      */
     fromLeftList (event) {
-      this.leftList = this.leftList.filter(value => !event.includes(value))
+      this.selected = this.selected.filter(value => !event.includes(value))
       this.rightList = [...this.rightList, ...event].sort()
+    }
+  },
+  watch: {
+    isActive (newIsActive) {
+      if (newIsActive === false) {
+        this.rightList = SpellBookTitle()
+      }
     }
   }
 }
