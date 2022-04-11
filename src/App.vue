@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <spell-header/>
     <router-view/>
+    <spell-footer/>
   </div>
 </template>
 
 <script>
+import SpellHeader from './components/common/SpellHeader'
+import SpellFooter from './components/common/SpellFooter'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {SpellFooter, SpellHeader}
 }
 </script>
 

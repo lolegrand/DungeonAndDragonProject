@@ -21,7 +21,7 @@
  */
 export default {
   name: 'MultiDataSelect',
-  props: ['dataList','name', 'disable'],
+  props: ['dataList', 'name', 'disable'],
   data () {
     return {
       selectedValues: []

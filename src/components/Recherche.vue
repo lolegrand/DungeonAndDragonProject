@@ -1,12 +1,10 @@
 <template>
   <div id="Recherche">
-    <router-link to="/">Configuration</router-link>
-    <router-link to="/Statistiques">Statistiques</router-link>
     <p>Recherche</p>
     <input type="text" v-model="search" placeholder="Spell name">
     <ul>
       <li v-for="spell in filteredSpells" :key="spell.id">
-        <desc-spell-show :spell-name=spell[1] :spells-info="spell" />
+        <spell :spell=spell />
       </li>
     </ul>
   </div>
@@ -14,11 +12,11 @@
 
 <script>
 import {sortTable} from '../assets/data.min'
-import DescSpellShow from './recherche/DescSpellShow'
+import Spell from './recherche/Spell'
 
 export default {
   name: 'Recherche',
-  components: {DescSpellShow},
+  components: {Spell},
   data () {
     return {
       spellsInfo: sortTable,
