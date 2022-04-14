@@ -6,6 +6,12 @@
 
 <script>
 
+/**
+ * This component is used to display the description of a spell.
+ * The properties:
+ *  - spellInfo hold all the data of a spell.
+ *  - isShown define if this description should be display or not.
+ */
 export default {
   name: 'DescSpellShow',
   props: ['spellsInfo', 'isShown']

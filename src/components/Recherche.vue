@@ -14,6 +14,18 @@
 import {sortTable} from '../assets/data.min'
 import Spell from './recherche/Spell'
 
+/**
+ * This component is using to represent the list of spell fetched from the data file.
+ * The data :
+ *  - spellInfo is the list of spell to be displayed (after being filtered with the search bar).
+ *  - search is the current research of the user.
+ * The computed property :
+ *  - filteredSpells is the array of spell after being filtered with what is typed in the search bar.
+ *  This computed property is updated each time the data 'search' is updated.
+ * Methods :
+ *  - computeConfiguredSpells is used to prefilter the spell in the file of spell following what is selected in the
+ *  configuration.
+ */
 export default {
   name: 'Recherche',
   components: {Spell},
