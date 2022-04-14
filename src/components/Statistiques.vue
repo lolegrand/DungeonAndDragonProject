@@ -1,7 +1,5 @@
 <template>
   <div>
-    <router-link to="/">Configuration</router-link>
-    <router-link to="/Recherche">Recherche</router-link>
     <p>Statistiques</p>
     <spells-number :spells-array=dataTable :spells-book-title=booksTable />
   </div>

@@ -17,6 +17,11 @@ export default {
     selected (newSelected) {
       if (this.selected !== '') {
         localStorage.setItem(this.storageId, JSON.stringify(newSelected))
+        if (Array.isArray(newSelected)) {
+          if (newSelected.length === 0) {
+            localStorage.removeItem(this.storageId)
+          }
+        }
       }
     },
     isActive (newIsActive) {

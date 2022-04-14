@@ -19,8 +19,43 @@ export default {
   components: {Spell},
   data () {
     return {
-      spellsInfo: sortTable,
+      spellsInfo: this.computeConfiguredSpells(),
       search: ''
+    }
+  },
+  methods: {
+    computeConfiguredSpells () {
+      let filteredSpellList = sortTable
+      if (localStorage.getItem('ecoles')) {
+        filteredSpellList = filteredSpellList.filter(
+          (spell) => spell[2] === JSON.parse(localStorage.getItem('ecoles')))
+      }
+      if (localStorage.getItem('branches')) {
+        filteredSpellList = filteredSpellList.filter(
+          (spell) => spell[3].includes(JSON.parse(localStorage.getItem('branches'))))
+      }
+      if (localStorage.getItem('classesAndDomains')) {
+        filteredSpellList = filteredSpellList.filter((spell) => {
+          for (let i of spell[4]) {
+            if (i[0] === JSON.parse(localStorage.getItem('classesAndDomains'))) {
+              return true
+            }
+          }
+        })
+      }
+      if (localStorage.getItem('level')) {
+        filteredSpellList = filteredSpellList.filter((spell) => {
+          for (let i of spell[4]) {
+            if (i[1] === parseInt(JSON.parse(localStorage.getItem('level')))) {
+              return true
+            }
+          }
+        })
+      }
+      if (localStorage.getItem('book')) {
+        filteredSpellList = filteredSpellList.filter((spell) => JSON.parse(localStorage.getItem('book')).includes(spell[0]))
+      }
+      return filteredSpellList
     }
   },
   computed: {
