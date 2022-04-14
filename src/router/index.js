@@ -7,6 +7,8 @@ import Statistiques from '../components/Statistiques'
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'active',
   routes: [
     {
       path: '/',

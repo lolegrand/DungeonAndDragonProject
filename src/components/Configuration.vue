@@ -6,7 +6,7 @@
     <select-row list-name="Search by niveau:" :data-list=spellLevelList storage-id="level"/>
     <pendulum   list-name="Search by Livre:" storage-id="book"/>
     <tr>
-      <td style="text-align: center" colspan="3">
+      <td colspan="3">
         <router-link to="/recherche">Recherche</router-link>
       </td>
     </tr>
@@ -47,5 +47,14 @@ export default {
 </script>
 
 <style scoped>
+
+td {
+  text-align: center;
+}
+
+table {
+  margin-right: auto;
+  margin-left: auto;
+}
 
 </style>

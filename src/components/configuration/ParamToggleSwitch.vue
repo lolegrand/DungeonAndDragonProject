@@ -1,6 +1,8 @@
 <template>
   <td>
-    <input type="checkbox" @change="$emit('row-state-changed', $event.target.checked)" :checked="defaultChecked"/>
+    <input type="checkbox"
+           @change="$emit('row-state-changed', $event.target.checked)"
+           :checked="defaultChecked"/>
     Prendre en compte ?
   </td>
 </template>

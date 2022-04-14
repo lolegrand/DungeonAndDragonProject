@@ -1,6 +1,8 @@
 <template>
   <table v-show=isShown>
-    <tr v-for="item in spellsInfo" :key="item.id">{{item}}</tr>
+    <tr v-for="item in spellsInfo" :key="item.id">
+      {{item}}
+    </tr>
   </table>
 </template>
 
@@ -14,6 +16,6 @@
  */
 export default {
   name: 'DescSpellShow',
-  props: ['spellsInfo', 'isShown']
+  props: ['spellsInfo', 'isShown'],
 }
 </script>

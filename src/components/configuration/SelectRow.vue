@@ -5,7 +5,7 @@
     </td>
     <td>
       <select :disabled="!isActive" v-model="selected">
-        <option disabled selected value> -- select an option -- </option>
+        <option disabled selected value> select an option </option>
         <option v-for="item in dataList" :key="item">{{item}}</option>
       </select>
     </td>
@@ -33,5 +33,19 @@ export default {
 </script>
 
 <style scoped>
+
+select {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  transition: all .5s ease;
+  position: relative;
+  font-size: 14px;
+  color: #474747;
+  height: 100%;
+}
 
 </style>
