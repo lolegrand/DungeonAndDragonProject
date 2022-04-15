@@ -43,5 +43,14 @@ export default {
 </script>
 
 <style scoped>
+div {
+  background-color: #E0DDCF;
+  border-radius: 10%;
+}
 
+h3 {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #aaa89d;
+}
 </style>

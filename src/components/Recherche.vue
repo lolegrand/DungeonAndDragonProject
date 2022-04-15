@@ -1,6 +1,5 @@
 <template>
   <div id="Recherche">
-    <p>Recherche</p>
     <input type="text" v-model="search" placeholder="Spell name">
     <ul>
       <li v-for="spell in filteredSpells" :key="spell.id">
@@ -79,3 +78,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ul {
+  list-style: none;
+}
+</style>

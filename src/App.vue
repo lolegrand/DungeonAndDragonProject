@@ -16,8 +16,13 @@ export default {
 </script>
 
 <style>
+
 * {
   background-color: #534b52;
+  color: #000;
 }
 
+input {
+  background-color: #E0DDCF;
+}
 </style>
