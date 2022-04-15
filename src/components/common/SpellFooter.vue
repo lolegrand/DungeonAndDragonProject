@@ -2,7 +2,7 @@
   <div>
     <h3>Realised by : Ludivine Biot, Louis Legrand</h3>
     <h4> See github page of the project :
-    <a href="https://github.com/lolegrand/DungeonAndDragonProject"> here </a>
+    <a href="https://github.com/lolegrand/DungeonAndDragonProject" target="_blank"> here </a>
     </h4>
   </div>
 </template>

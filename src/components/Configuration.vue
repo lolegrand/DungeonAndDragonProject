@@ -5,11 +5,6 @@
     <select-row list-name="Search Classes & Domaines:" :data-list=classList storage-id="classesAndDomains"/>
     <select-row list-name="Search by niveau:" :data-list=spellLevelList storage-id="level"/>
     <pendulum   list-name="Search by Livre:" storage-id="book"/>
-    <tr>
-      <td colspan="3">
-        <router-link to="/recherche">Recherche</router-link>
-      </td>
-    </tr>
   </table>
 </template>
 

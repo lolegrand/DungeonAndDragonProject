@@ -22,7 +22,12 @@ export default {
   color: #000;
 }
 
-input {
+input,
+select{
   background-color: #E0DDCF;
+}
+
+option {
+  background-color: inherit;
 }
 </style>

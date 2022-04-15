@@ -1,12 +1,10 @@
 <template>
-  <div id="Recherche">
+  <article id="Recherche">
     <input type="text" v-model="search" placeholder="Spell name">
-    <ul>
-      <li v-for="spell in filteredSpells" :key="spell.id">
-        <spell :spell=spell />
-      </li>
-    </ul>
-  </div>
+    <div v-for="spell in filteredSpells" :key="spell.id">
+      <spell :spell=spell />
+    </div>
+  </article>
 </template>
 
 <script>
@@ -80,7 +78,19 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  list-style: none;
+
+article {
+  justify-content: center;
 }
+
+input,
+div {
+  margin: 0.5rem;
+}
+input {
+  width: 33%;
+  margin-left: 33%;
+  padding: 0.5rem 1rem;
+}
+
 </style>

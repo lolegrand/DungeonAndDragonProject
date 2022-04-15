@@ -84,4 +84,11 @@ export default {
 * {
   background-color: #E0DDCF;
 }
+
+table {
+  padding: 0.5rem 1rem;
+}
+td {
+  width: 33%;
+}
 </style>
